@@ -12,6 +12,9 @@ $base_path = '/var/spool/asterisk/monitor/';
  * 
  **/
 
+    //Abaixo está a configuração do crontab para configurar no servidor PABX
+    //*/1 * * * * php /var/lib/asterisk/agi-bin/easytec/exactspotter/send_files.php
+
 $query = "SELECT * FROM call_out_exactspotter WHERE voice_opened IS NOT NULL AND recording_sent IS NULL";
 
 $calls = selectAll($query);
