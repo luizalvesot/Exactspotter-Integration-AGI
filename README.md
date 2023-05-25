@@ -60,9 +60,16 @@ ___
 O restantes dos ajustes devem ser feitos dentro da interface web do Issabel, sendo:
 
 **1°** - Criação ***Custom Destinations*** que faça a chamada do contexto citado acima.
+![image](https://github.com/luizalvesot/Exactspotter-Integration-AGI/assets/134508953/1a6b8f0f-d540-412e-a83b-e57ace2a5287)
+
 
 **2°** - Criação de uma ***Outbound Routes*** enviando para o Custom Destinations criado.
+![image](https://github.com/luizalvesot/Exactspotter-Integration-AGI/assets/134508953/4478a08b-19b2-4ab4-beba-608d673e8608)
+
 
 **3°** - Criação de uma ***Class of Service*** que permita apenas extensões, filas e a rota criada acima.
+![image](https://github.com/luizalvesot/Exactspotter-Integration-AGI/assets/134508953/9d493244-f7ff-4959-a43d-696761fe1edd)
+
 
 **4°** - Adicionar todos os ramais que irão utilizar ExactSpotter na Class Of Service criada.
+![image](https://github.com/luizalvesot/Exactspotter-Integration-AGI/assets/134508953/782c79da-6ede-4f92-b54a-28d16f853866)
