@@ -4,7 +4,7 @@ Este repositório é dedicado a uma customização desenvolvida em um PABX digit
 
 ### Adição de campo na tabela CDR
 
-O PABX utilizado para desenvolver este projeto foi o Issabel com Asterisk 11. Este sistema possui um módulo chamado **CDR** que salva todos os registros de uma chamada de entrada ou de saída dentro um tabela chamada ***CDR*** no banco de dados ***ASTERISKCDRDR***. Antes de iniciar todo o projeto, recomenda-se fortemente criar o campo `dst_custom` dentro da tabela citada anteriormente, coonforme é feito abaixo.
+O PABX utilizado para desenvolver este projeto foi o Issabel com Asterisk 11. Este sistema possui um módulo chamado **CDR** que salva todos os registros de uma chamada de entrada ou de saída dentro um tabela chamada ***CDR*** no banco de dados ***ASTERISKCDRDB***. Antes de iniciar todo o projeto, recomenda-se fortemente criar o campo `dst_custom` dentro da tabela citada anteriormente, coonforme é feito abaixo.
 
 Acessar o banco de dados `asteriskcdrdb` e na aba consulta rodar o seguite código:
 
@@ -20,7 +20,7 @@ O comando acima irá adicionar a nova coluna na tabela, usada para registrar os 
 
 ### Criação do Banco de Dados exactspotter
 
-A fim de registrar as informações das chamadas feitas através do ***ExactSpotter*** criei um banco de dados independente com apenas duas tabelas. Basta abrir a janela de consulta do MySql e executar o script localizado em `/var/lib/asterisk/agi-bin/easytec/exactspotter/important_files/exactspotter.sql`. Após atualizar, o novo bando de dados `exactspotter` será criado, encerrando todas as alterações necessáriasa nível de banco no PABX.
+A fim de registrar as informações das chamadas feitas através do ***ExactSpotter*** criei um banco de dados independente com apenas duas tabelas. Basta abrir a janela de consulta do MySql e executar o script localizado em `/var/lib/asterisk/agi-bin/easytec/exactspotter/important_files/exactspotter.sql`. Após atualizar, o novo banco de dados `exactspotter` será criado, encerrando todas as alterações necessárias a nível de banco no PABX.
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 ### Finalizando os ajustes do projeto
 
-O restantes dos ajustes devem ser feitos dentra da interface do Issabel, sendo:
+O restantes dos ajustes devem ser feitos dentro da interface web do Issabel, sendo:
 
 **1°** - Criação ***Custom Destinations*** que faça a chamada do contexto citado acima.
 
