@@ -4,7 +4,7 @@ Este repositório é dedicado a uma customização desenvolvida em um PABX digit
 
 ### Adição de campo na tabela CDR
 
-O PABX utilizado para desenvolver este projeto foi o Issabel com Asterisk 11. Este sistema possui um módulo chamado ** CDR ** que salva todos os registros de uma chamada de entrada ou de saída dentro um tabela chamada ** CDR ** no banco de dados *ASTERISKCDRDR **. Antes de iniciar todo o projeto, recomenda-se fortemente criar o campo `dst_custom` dentro da tabela citada anteriormente, coonforme é feito abaixo.
+O PABX utilizado para desenvolver este projeto foi o Issabel com Asterisk 11. Este sistema possui um módulo chamado **CDR** que salva todos os registros de uma chamada de entrada ou de saída dentro um tabela chamada ***CDR*** no banco de dados ***ASTERISKCDRDR***. Antes de iniciar todo o projeto, recomenda-se fortemente criar o campo `dst_custom` dentro da tabela citada anteriormente, coonforme é feito abaixo.
 
 Acessar o banco de dados `asteriskcdrdb` e na aba consulta rodar o seguite código:
 
@@ -20,7 +20,7 @@ O comando acima irá adicionar a nova coluna na tabela, usada para registrar os 
 
 ### Criação do Banco de Dados exactspotter
 
-A fim de registrar as informações das chamadas feitas através do ** ExactSpotter ** criei um banco de dados independente com apenas duas tabelas. Basta abrir a janela de consulta do MySql e executar o script localizado em `/var/lib/asterisk/agi-bin/easytec/exactspotter/important_files/exactspotter.sql`. Após atualizar, o novo bando de dados `exactspotter` será criado, encerrando todas as alterações necessáriasa nível de banco no PABX.
+A fim de registrar as informações das chamadas feitas através do ***ExactSpotter*** criei um banco de dados independente com apenas duas tabelas. Basta abrir a janela de consulta do MySql e executar o script localizado em `/var/lib/asterisk/agi-bin/easytec/exactspotter/important_files/exactspotter.sql`. Após atualizar, o novo bando de dados `exactspotter` será criado, encerrando todas as alterações necessáriasa nível de banco no PABX.
 
 ___
 
@@ -32,11 +32,11 @@ Para iniciar este projeto basta descarregar todo este repositório no diretório
 same => n,Dial(SIP/31950002/${destination},300,Tt)
 ```
 
-** Atençaõ ** - Não podemos esquecer de dar permissão ** chmod -R 775 ** para todos estes arquivos.
+**Atençaõ** - Não podemos esquecer de dar permissão ***chmod -R 77*** para todos estes arquivos.
 
 ### Editando extensions_custom.conf
 
-Para o PABX identificar o nosso contexto customizado em sua pilha de arquivos, devemos editar uma linha do arquivo `/etc/asterisk/extensions_custom.conf` a fim de ** incluir ** o contexto, ficando da seguinte forma:
+Para o PABX identificar o nosso contexto customizado em sua pilha de arquivos, devemos editar uma linha do arquivo `/etc/asterisk/extensions_custom.conf` a fim de **incluir** o contexto, ficando da seguinte forma:
 
 ```conf
 ; This file contains example extensions_custom.conf entries.
@@ -59,10 +59,10 @@ ___
 
 O restantes dos ajustes devem ser feitos dentra da interface do Issabel, sendo:
 
-** 1° ** - Criação ** Custom Destinations ** que faça a chamada do contexto citado acima.
+**1°** - Criação ***Custom Destinations*** que faça a chamada do contexto citado acima.
 
-** 2° ** - Criação de uma ** Outbound Routes ** enviando para o Custom Destinations criado.
+**2°** - Criação de uma ***Outbound Routes*** enviando para o Custom Destinations criado.
 
-** 3° ** - Criação de uma ** Class of Service ** que permita apenas extensões, filas e a rota criada acima.
+**3°** - Criação de uma ***Class of Service*** que permita apenas extensões, filas e a rota criada acima.
 
-** 4° ** - Adicionar todos os ramais que irão utilizar ExactSpotter na Class Of Service criada.
+**4°** - Adicionar todos os ramais que irão utilizar ExactSpotter na Class Of Service criada.
