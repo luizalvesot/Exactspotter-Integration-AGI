@@ -53,6 +53,17 @@ exten => h,1,Hangup()
 
 #include easytec/exactspotter_ativo.conf //Esta linha inclui o contexto
 ```
+
+___
+
+### Ajuste do Crontab
+
+Será necessário instalar o ***crontab*** no linux caso não tenha, rodando o comando `sudo apt-get install cron -y`, `sudo systemctl start cron` e por fim habilitar o serviço com `sudo systemctl enable cron`.
+
+Em seguida terá que digitar o comando `crontab -e` e colar a linha abaixo, ela fará com que o arquivo resposável para enviar as gravações para o servidor remoto ***https://nubbi.easypabx.com.br/var/www/exactspotter-recordings/*** seja executado de **1 em 1 minuto**, assim então upando as gravações neste período.
+
+`*/1 * * * * php /var/lib/asterisk/agi-bin/easytec/exactspotter/send_files.php`
+
 ___
 
 ### Finalizando os ajustes do projeto
@@ -73,3 +84,5 @@ O restantes dos ajustes devem ser feitos dentro da interface web do Issabel, sen
 
 **4°** - Adicionar todos os ramais que irão utilizar ExactSpotter na Class Of Service criada.
 ![image](https://github.com/luizalvesot/Exactspotter-Integration-AGI/assets/134508953/782c79da-6ede-4f92-b54a-28d16f853866)
+
+
