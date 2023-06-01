@@ -58,11 +58,13 @@ ___
 
 ### Ajuste do Crontab
 
-Será necessário instalar o ***crontab*** no linux caso não tenha, rodando o comando `sudo apt-get install cron -y`, `sudo systemctl start cron` e por fim habilitar o serviço com `sudo systemctl enable cron`.
+Será necessário instalar o ***crontab*** no PABX caso não tenha, rodando o comando `sudo apt-get install cron -y`, `sudo systemctl start cron` e por fim habilitar o serviço com `sudo systemctl enable cron`.
 
 Em seguida terá que digitar o comando `crontab -e` e colar a linha abaixo, ela fará com que o arquivo resposável para enviar as gravações para o servidor remoto ***https://nubbi.easypabx.com.br/var/www/exactspotter-recordings/*** seja executado de **1 em 1 minuto**, assim então upando as gravações neste período.
 
 `*/1 * * * * php /var/lib/asterisk/agi-bin/easytec/exactspotter/send_files.php`
+
+
 
 ___
 
