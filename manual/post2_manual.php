@@ -12,7 +12,7 @@
  *
  **/
 
-require __DIR__ . '/geral.php';
+require __DIR__ . '../geral.php';
 date_default_timezone_set('America/Sao_Paulo');
 
 
